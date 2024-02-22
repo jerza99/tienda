@@ -1,0 +1,11 @@
+
+Forma de entrar a la pagina 
+Laragon
+http://master_php.test/Tienda/?controller=usuario&action=registro
+
+Wampserver
+http://localhost/Master_Php/Tienda/index.php?controller=usuario&action=save
+
+
+insertar datos en tabla producto
+INSERT INTO `productos` (`id`, `categoria_id`, `nombre`, `descripcion`, `precio`, `stock`, `oferta`, `fecha`, `imagen`) VALUES (NULL, '1', 'Box logo sipreme', 'Box logo sipreme', '100', '20', NULL, '2024-02-02', NULL);
