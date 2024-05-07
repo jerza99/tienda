@@ -52,7 +52,6 @@
                 
                 $identity = $usuario->loguin();
                 // Crear una sesion
-
                 if ($identity && is_object($identity)) {
                     $_SESSION['identity'] = $identity;
 
@@ -77,4 +76,4 @@
             
             header("Location:".base_url);
         }
-    }
+    }    

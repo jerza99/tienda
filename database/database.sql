@@ -22,7 +22,7 @@
         'admin@admin.com',
         'contraseña',
         'admin',
-        null   
+        null
     );
 
     CREATE TABLE categorias(

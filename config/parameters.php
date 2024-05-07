@@ -3,7 +3,7 @@
 
     //  Se definen constantes 
     // Constante para la base de la url que tendra el proyecto 
-    define("base_url","http://localhost/Master_Php/Tienda/");
+    define("base_url","http://localhost/Proyects/Web/Tienda/");
 
     // Constante para determinar qué controlador debe cargarse por defecto.
     define("controller_default", "productoController");
