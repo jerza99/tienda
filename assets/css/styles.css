@@ -1,6 +1,5 @@
 
     /* Generales */
-    
     *{
         padding: 0px;
         margin: 0px;
@@ -33,7 +32,6 @@
     }
 
     /* Contenido de la tabla */
-
     table{
         text-align: center;
         width: 100%;
@@ -49,7 +47,6 @@
         width: 100px;
     }
 
-    
 
     /* Container */
     #container{
@@ -60,7 +57,6 @@
     }
 
     /* Header */
-
     #header{
         height: 145px;
         background: #F0F0F0;
@@ -97,7 +93,6 @@
     }
 
     /* Menu */
-
     #menu{
         clear: both;
         background: #222;
@@ -137,7 +132,6 @@
     }
 
     /* Content */
-
     #content{
         margin: 0px auto;
         overflow: hidden;
@@ -145,7 +139,6 @@
     }
 
     /* Barra lateral */
-
     #lateral{
         width: 22%;
         min-height: 500px;
@@ -188,7 +181,6 @@
     }
 
     /* Forms */
-
     .form_container{
         width: 50%;
     }
@@ -293,7 +285,6 @@
     }
 
     /* Productos */
-
     .product{
         width: 30%;
         float: left;
