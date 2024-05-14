@@ -308,6 +308,12 @@
         margin-bottom: 10px;
     }
 
+    .img_carrito {
+        height: 80px;
+        display: block;
+        margin: 10px auto;
+    }
+
     .product h2{
         font-size: 18px;
         margin-bottom: 10px;
@@ -365,4 +371,23 @@
         color: white;
         background: #222222;
         border-top: 4px solid #01B1EA;
+    }
+
+    /* Carrito */
+
+    .total-carrito{
+        width: 340px;
+        float: right;
+    }
+
+    .total-carrito h3{
+        display: block;
+        float: left;
+        margin-top: 5px;
+    }
+
+    .button-pedido{
+        display: block;
+        float: right;
+        width: 120px;
     }
