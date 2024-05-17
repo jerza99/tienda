@@ -1,8 +1,10 @@
-<?php 
-    require_once 'models/pedido.php';
-    class pedidoController{
-        public function index(){
+<?php
 
+    require_once 'models/pedido.php';
+
+    class pedidoController{
+
+        public function index(){
             require_once 'views/pedido/index.php';
         }
 
@@ -68,8 +70,52 @@
             Utils::isIdentity();
             $usuario_id = $_SESSION['identity']->id;
             $pedido = new Pedido();
-            $pedido = $pedido->setUsuario_id($usuario_id);
+            $pedido->setUsuario_id($usuario_id);
             $pedidos = $pedido->getAllByUser();
             require_once 'views/pedido/mis_pedidos.php';
         }
+
+        public function detalle(){
+            Utils::isIdentity();
+            if (isset($_GET['id'])){
+
+                $id = $_GET['id'];
+                // Sacar pedido
+                $pedido = new pedido();
+                $pedido->setId($id);
+                $pedido = $pedido->getOne();
+
+                // Sacar los productos
+                $pedidos_products = new Pedido();
+                $products = $pedidos_products->getProductsByPedidos($id);
+
+                require_once 'views/pedido/detalle.php';
+            }else{
+                header('Location: '.base_url.'pedido/mis_pedidos.php');
+            }
+        }
+
+        public function gestion(){
+            Utils::isIdentity();
+            $gestion = true;
+
+            $pedido = new pedido();
+            $pedidos = $pedido->getAll();
+            require_once 'views/pedido/mis_pedidos.php';
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

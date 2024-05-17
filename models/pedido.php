@@ -14,11 +14,10 @@ class Pedido{
     private $db;
 
     public function __construct(){
-        $this->db = Database::connect();;
+        $this->db = Database::connect();
     }
 
-    public function getId()
-    {
+    public function getId(){
         return $this->id;
     }
 
@@ -112,11 +111,11 @@ class Pedido{
     }
 
     public function getAllByUser(){
-        $sql = "SELECT p.id FROM pedidos p "
+        $sql = "SELECT p.* FROM pedidos p "
             . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC ";
 
         $pedido = $this->db->query($sql);
-        return $pedido->fetch_object();
+        return $pedido;
     }
 
     public function getProductsByPedidos($id){

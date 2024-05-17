@@ -1,29 +1,32 @@
-
-
-    <h1>Mis pedidos</h1>
+    <?php if (isset($gestion)): ?>
+        <h1>Gestionar pedidos</h1>
+    <?php else: ?>
+        <h1>Mis pedidos</h1>
+    <?php endif;?>
 
     <table>
         <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Unidades</th>
+            <th>N° pedido</th>
+            <th>Coste</th>
+            <th>Fecha</th>
+            <th>Estado</th>
         </tr>
         <?php
-        foreach ($carrito AS $index => $element):
-            $product = $element['producto'];
+            while ($ped = $pedidos->fetch_object()) :
             ?>
             <tr>
-                <th>
-                    <?php if($product->imagen != null):?>
-                        <img class="img_carrito" src="<?=base_url?>uploads/images/<?=$product->imagen?>">
-                    <?php else: ?>
-                        <img class="img_carrito" src="<?=base_url?>assets/img/camiseta.png">
-                    <?php endif; ?>
-                </th>
-                <th><a href="<?=base_url?>producto/ver&id=<?=$product->id?>"><?=$product->nombre?></a></th>
-                <th><?=$product->precio?></th>
-                <th><?=$element['unidades']?></th>
+                <td>
+                    <a href="<?=base_url?>pedido/detalle&id=<?=$ped->id?>"><?=$ped->id?></a>
+                </td>
+                <td>
+                    $<?=$ped->coste?>
+                </td>
+                <td>
+                    <?=$ped->fecha?>
+                </td>
+                <td>
+                    <?=$ped->estado?>
+                </td>
             </tr>
-        <?php endforeach;?>
+        <?php endwhile;?>
     </table>
