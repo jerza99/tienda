@@ -103,6 +103,22 @@
             $pedidos = $pedido->getAll();
             require_once 'views/pedido/mis_pedidos.php';
         }
+
+        public function estado(){
+            Utils::isIdentity();
+        if (isset($_POST['pedido_id']) && isset($_POST['estado'])){
+                $id = $_POST['pedido_id'];
+                $estado = $_POST['estado'];
+                //Update del pedido
+                $pedido = new Pedido();
+                $pedido->setId($id);
+                $pedido->setEstado($estado);
+                $pedido->edit();
+                header('Location: '.base_url.'pedido/detalle&id='.$id);
+            }else{
+                header('Location: '.base_url);
+            }
+        }
     }
 
 

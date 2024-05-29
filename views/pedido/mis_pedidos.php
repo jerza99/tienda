@@ -25,7 +25,7 @@
                     <?=$ped->fecha?>
                 </td>
                 <td>
-                    <?=$ped->estado?>
+                    <?=Utils::showStatus($ped->estado)?>
                 </td>
             </tr>
         <?php endwhile;?>

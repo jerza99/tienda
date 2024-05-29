@@ -47,8 +47,23 @@
                     $stats['total'] += $product['precio'] * $product['unidades'];
                 }
             }
-
             return $stats;
+        }
+
+        public static function showStatus($status){
+
+            $value = 'pendiente';
+
+            if ($status == 'confirm') {
+                $value = 'pendiente';
+            }elseif ($status == 'preparation'){
+                $value = 'En preparacion';
+            }elseif ($status == 'ready'){
+                $value = 'Preparado';
+            }elseif ($status == 'sended'){
+                $value = 'Enviado';
+            }
+            return $value;
         }
     } 
 ?>
